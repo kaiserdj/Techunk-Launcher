@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,42 +19,69 @@ namespace Techunk_Launcher
         }
 
         MLogin login = new MLogin();
+        MSession session;
 
         private void Logout_and_Cache_Load(object sender, EventArgs e)
         {
-            var session = login.GetLocalToken();
+            session = login.GetLocalToken();
             lvAT.Text = session.AccessToken;
             lvUsername.Text = session.Username;
             lvUUID.Text = session.UUID;
             lvCT.Text = session.ClientToken;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Btn_Signout_Click(object sender, EventArgs e)
         {
             // signout
+            if (session.Username == "")
+            {
+                MessageBox.Show("Actualmente no hay una sesión");
+                return;
+            }
+
+            if (session.AccessToken == "Offline")
+            {
+                MessageBox.Show("La sesión actual es una sesión Offline");
+                return;
+            }
 
             var result = login.Signout(txtEmail.Text, txtPassword.Text);
             if (result)
             {
-                MessageBox.Show("Success");
+                login.DeleteTokenFile();
+                MessageBox.Show("Desconexión completada");
                 Application.Exit();
             }
             else
-                MessageBox.Show("Failed");
+                MessageBox.Show("Error al desconectar");
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void Btn_InvalidateS_Click(object sender, EventArgs e)
         {
             // invalidate
+            if(session.Username == "")
+            {
+                MessageBox.Show("Actualmente no hay una sesión");
+                return;
+            }
+
+            if(session.AccessToken == "Offline")
+            {
+                MessageBox.Show("La sesión actual es una sesión Offline");
+                return;
+            }
 
             var result = login.Invalidate();
 
             if (result)
             {
-                MessageBox.Show("Success");
+                MessageBox.Show("Sesión invalidada");
                 Application.Exit();
             }
             else
+                MessageBox.Show("Error al invalidad la sesión");
+        }
+
         private void Btn_DeleteS_Click(object sender, EventArgs e)
         {
             // delete

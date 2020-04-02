@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Threading;
 using System.Windows.Forms;
 using Techunk_Api.Launcher;
@@ -78,7 +78,7 @@ namespace Techunk_Launcher
                 if (result.Result != MLoginResult.Success)
                     return;
 
-                MessageBox.Show("¡Auto inicio de sesión completado!");
+                MessageBox.Show("¡Auto inicio de sesión completado!\n\nUsuario: " + result.Username);
                 session = result;
 
                 Invoke((MethodInvoker)delegate {
@@ -105,6 +105,11 @@ namespace Techunk_Launcher
         private void Btn_Login_Click(object sender, EventArgs e)
         {
             // Login
+            if(Txt_User.Text == "")
+            {
+                MessageBox.Show("El campo usuario no puede estar vacio");
+                return;
+            }
 
             Btn_Login.Enabled = false;
             if (Txt_Pass.Text == "")
@@ -150,11 +155,16 @@ namespace Techunk_Launcher
 
             if (session == null)
             {
-                MessageBox.Show("Login First");
+                MessageBox.Show("Inicie sesión primero");
                 return;
             }
 
-            if (Cb_Version.Text == "") return;
+
+            if (Cb_Version.Text == "")
+            {
+                MessageBox.Show("Porfavor eliga una versión");
+                return;
+            }
             groupBox1.Enabled = false;
             groupBox2.Enabled = false;
 

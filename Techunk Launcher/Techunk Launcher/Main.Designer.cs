@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_loginOption = new System.Windows.Forms.Button();
             this.Btn_Launch = new System.Windows.Forms.Button();
             this.Cb_Version = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.Lv_Status = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.Btn_loginOption = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Launcher";
+            // 
+            // Btn_loginOption
+            // 
+            this.Btn_loginOption.Location = new System.Drawing.Point(206, 0);
+            this.Btn_loginOption.Name = "Btn_loginOption";
+            this.Btn_loginOption.Size = new System.Drawing.Size(112, 25);
+            this.Btn_loginOption.TabIndex = 15;
+            this.Btn_loginOption.Text = "Opciones de sesión";
+            this.Btn_loginOption.UseVisualStyleBackColor = true;
+            this.Btn_loginOption.Click += new System.EventHandler(this.Btn_loginOption_Click);
             // 
             // Btn_Launch
             // 
@@ -340,16 +350,6 @@
             this.progressBar2.Size = new System.Drawing.Size(700, 23);
             this.progressBar2.TabIndex = 14;
             // 
-            // Btn_loginOption
-            // 
-            this.Btn_loginOption.Location = new System.Drawing.Point(206, 0);
-            this.Btn_loginOption.Name = "Btn_loginOption";
-            this.Btn_loginOption.Size = new System.Drawing.Size(112, 25);
-            this.Btn_loginOption.TabIndex = 15;
-            this.Btn_loginOption.Text = "Opciones de sesión";
-            this.Btn_loginOption.UseVisualStyleBackColor = true;
-            this.Btn_loginOption.Click += new System.EventHandler(this.Btn_loginOption_Click);
-            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Main";
-            this.Text = "Main";
+            this.Text = "Launcher Techunk";
             this.Load += new System.EventHandler(this.Main_Load);
             this.Shown += new System.EventHandler(this.Main_Shown);
             this.groupBox1.ResumeLayout(false);

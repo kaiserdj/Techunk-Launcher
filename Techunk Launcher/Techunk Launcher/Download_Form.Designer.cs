@@ -46,7 +46,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Download Runtime";
+            this.label1.Text = "Descargando Java";
             // 
             // Download_Form
             // 
@@ -56,7 +56,8 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Name = "Download_Form";
-            this.Text = "Download_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Descarga";
             this.ResumeLayout(false);
             this.PerformLayout();
 

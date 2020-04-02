@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Btn_DeleteS = new System.Windows.Forms.Button();
             this.lvCT = new System.Windows.Forms.Label();
             this.lvUsername = new System.Windows.Forms.Label();
             this.lvUUID = new System.Windows.Forms.Label();
@@ -50,6 +51,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.Btn_DeleteS);
             this.groupBox2.Controls.Add(this.lvCT);
             this.groupBox2.Controls.Add(this.lvUsername);
             this.groupBox2.Controls.Add(this.lvUUID);
@@ -63,7 +65,17 @@
             this.groupBox2.Size = new System.Drawing.Size(364, 124);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Login Cache";
+            this.groupBox2.Text = "Caché de inicio de sesión";
+            // 
+            // Btn_DeleteS
+            // 
+            this.Btn_DeleteS.Location = new System.Drawing.Point(236, -1);
+            this.Btn_DeleteS.Name = "Btn_DeleteS";
+            this.Btn_DeleteS.Size = new System.Drawing.Size(92, 23);
+            this.Btn_DeleteS.TabIndex = 8;
+            this.Btn_DeleteS.Text = "Borrar sesión";
+            this.Btn_DeleteS.UseVisualStyleBackColor = true;
+            this.Btn_DeleteS.Click += new System.EventHandler(this.Btn_DeleteS_Click);
             // 
             // lvCT
             // 
@@ -149,36 +161,36 @@
             this.groupBox1.Size = new System.Drawing.Size(295, 108);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Signout";
+            this.groupBox1.Text = "Desconectar";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(59, 61);
+            this.txtPassword.Location = new System.Drawing.Point(70, 61);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(170, 20);
+            this.txtPassword.Size = new System.Drawing.Size(158, 20);
             this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(59, 34);
+            this.txtEmail.Location = new System.Drawing.Point(70, 34);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(170, 20);
+            this.txtEmail.Size = new System.Drawing.Size(159, 20);
             this.txtEmail.TabIndex = 3;
             // 
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(24, 64);
+            this.pw_label.Location = new System.Drawing.Point(6, 64);
             this.pw_label.Name = "pw_label";
-            this.pw_label.Size = new System.Drawing.Size(34, 13);
+            this.pw_label.Size = new System.Drawing.Size(67, 13);
             this.pw_label.TabIndex = 2;
-            this.pw_label.Text = "PW : ";
+            this.pw_label.Text = "Contraseña: ";
             // 
             // Email_label
             // 
             this.Email_label.AutoSize = true;
-            this.Email_label.Location = new System.Drawing.Point(12, 37);
+            this.Email_label.Location = new System.Drawing.Point(32, 37);
             this.Email_label.Name = "Email_label";
             this.Email_label.Size = new System.Drawing.Size(41, 13);
             this.Email_label.TabIndex = 1;
@@ -190,8 +202,9 @@
             this.Btn_Signout.Name = "Btn_Signout";
             this.Btn_Signout.Size = new System.Drawing.Size(56, 75);
             this.Btn_Signout.TabIndex = 0;
-            this.Btn_Signout.Text = "Signout";
+            this.Btn_Signout.Text = "Cerrar Sesión";
             this.Btn_Signout.UseVisualStyleBackColor = true;
+            this.Btn_Signout.Click += new System.EventHandler(this.Btn_Signout_Click);
             // 
             // Btn_InvalidateS
             // 
@@ -199,8 +212,9 @@
             this.Btn_InvalidateS.Name = "Btn_InvalidateS";
             this.Btn_InvalidateS.Size = new System.Drawing.Size(64, 43);
             this.Btn_InvalidateS.TabIndex = 9;
-            this.Btn_InvalidateS.Text = "Invalidate\r\nSession";
+            this.Btn_InvalidateS.Text = "Invalidar Sesión";
             this.Btn_InvalidateS.UseVisualStyleBackColor = true;
+            this.Btn_InvalidateS.Click += new System.EventHandler(this.Btn_InvalidateS_Click);
             // 
             // Logout_and_Cache
             // 
@@ -211,7 +225,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
             this.Name = "Logout_and_Cache";
-            this.Text = "Logout_and_Cache";
+            this.Text = "Opciones de sesión";
             this.Load += new System.EventHandler(this.Logout_and_Cache_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -239,5 +253,6 @@
         private System.Windows.Forms.Label Email_label;
         private System.Windows.Forms.Button Btn_Signout;
         private System.Windows.Forms.Button Btn_InvalidateS;
+        private System.Windows.Forms.Button Btn_DeleteS;
     }
 }
