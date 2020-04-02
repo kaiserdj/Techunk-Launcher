@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;
 using System.Windows.Forms;
 using Techunk_Api.Launcher;
@@ -111,8 +111,10 @@ namespace Techunk_Launcher
             {
                 if (allowOffline)
                 {
-                    session = MSession.GetOfflineSession(Txt_User.Text);
-                    MessageBox.Show("Inico pirata completado : " + Txt_User.Text);
+                    var login = new MLogin();
+                    // session = MSession.GetOfflineSession(Txt_User.Text);
+                    session = login.offline(Txt_User.Text);
+                    MessageBox.Show("Inicio pirata completado : " + session.Username);
                 }
                 else
                 {

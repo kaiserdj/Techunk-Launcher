@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Techunk_Api.Launcher
 {
-    public enum MLoginResult { Success, BadRequest, WrongAccount, NeedLogin, UnknownError }
+    public enum MLoginResult { Success, BadRequest, WrongAccount, NeedLogin, UnknownError}
 
     public class MSession
     {
@@ -27,8 +27,8 @@ namespace Techunk_Api.Launcher
         {
             var login = new MSession();
             login.Username = username;
-            login.AccessToken = "access_token";
-            login.UUID = "user_uuid";
+            login.AccessToken = "Offline";
+            login.UUID = "Offline";
             login.Result = MLoginResult.Success;
             login.Message = "";
             login.ClientToken = "";
@@ -115,6 +115,16 @@ namespace Techunk_Api.Launcher
             }
 
             return session;
+        }
+
+        public MSession offline(string user)
+        {
+            MSession result = MSession.GetOfflineSession(user);
+            MSession token = GetLocalToken();
+            result.ClientToken = token.ClientToken;
+            WriteLogin(result);
+
+            return result;
         }
 
         private HttpWebResponse mojangRequest(string endpoint, string postdata)
@@ -261,6 +271,11 @@ namespace Techunk_Api.Launcher
             {
                 var session = GetLocalToken();
 
+                if(session.AccessToken == "Offline")
+                {
+                    return session;
+                }
+
                 JObject job = new JObject
                 {
                     { "accessToken", session.AccessToken },
@@ -299,6 +314,8 @@ namespace Techunk_Api.Launcher
         public bool Invalidate()
         {
             var session = GetLocalToken();
+
+
 
             var job = new JObject
             {
