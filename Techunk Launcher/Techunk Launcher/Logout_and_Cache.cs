@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +55,18 @@ namespace Techunk_Launcher
                 Application.Exit();
             }
             else
-                MessageBox.Show("Failed");
+        private void Btn_DeleteS_Click(object sender, EventArgs e)
+        {
+            // delete
+            if (session.Username == "")
+            {
+                MessageBox.Show("Actualmente no hay una sesión");
+                return;
+            }
+
+            login.DeleteTokenFile();
+            MessageBox.Show("Sesión borrada");
+            Application.Exit();
         }
     }
 }
