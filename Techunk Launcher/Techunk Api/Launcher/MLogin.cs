@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -230,13 +230,7 @@ namespace Techunk_Api.Launcher
                 var req = new JObject
                 {
                     { "accessToken", session.AccessToken },
-                    { "clientToken", session.ClientToken },
-                    { "selectedProfile", new JObject()
-                        {
-                            { "id", session.UUID },
-                            { "name", session.Username }
-                        }
-                    }
+                    { "clientToken", session.ClientToken }
                 };
 
                 var resHeader = mojangRequest("refresh", req.ToString());
