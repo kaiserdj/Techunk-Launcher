@@ -33,15 +33,9 @@ namespace Techunk_Launcher
         private void Btn_Signout_Click(object sender, EventArgs e)
         {
             // signout
-            if (session.Username == "")
+            if ((txtEmail.Text == "") || (txtPassword.Text == "")) 
             {
-                MessageBox.Show("Actualmente no hay una sesión");
-                return;
-            }
-
-            if (session.AccessToken == "Offline")
-            {
-                MessageBox.Show("La sesión actual es una sesión Offline");
+                MessageBox.Show("Los campos Email y Contraseña no pueden estar vacios.");
                 return;
             }
 
@@ -59,9 +53,9 @@ namespace Techunk_Launcher
         private void Btn_InvalidateS_Click(object sender, EventArgs e)
         {
             // invalidate
-            if(session.Username == "")
+            if(session.AccessToken == "")
             {
-                MessageBox.Show("Actualmente no hay una sesión");
+                MessageBox.Show("Actualmente no hay una sesión abierta");
                 return;
             }
 

@@ -39,6 +39,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.pw_label = new System.Windows.Forms.Label();
@@ -151,6 +152,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPassword);
             this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.pw_label);
@@ -158,14 +160,23 @@
             this.groupBox1.Controls.Add(this.Btn_Signout);
             this.groupBox1.Location = new System.Drawing.Point(397, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 108);
+            this.groupBox1.Size = new System.Drawing.Size(295, 124);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Desconectar";
+            this.groupBox1.Text = "Desconectar cuenta premium";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(255, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Invalida todos los accessToken que tenga la cuenta";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(70, 61);
+            this.txtPassword.Location = new System.Drawing.Point(68, 75);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(158, 20);
             this.txtPassword.TabIndex = 4;
@@ -173,7 +184,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(70, 34);
+            this.txtEmail.Location = new System.Drawing.Point(68, 48);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(159, 20);
             this.txtEmail.TabIndex = 3;
@@ -181,7 +192,7 @@
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(6, 64);
+            this.pw_label.Location = new System.Drawing.Point(4, 78);
             this.pw_label.Name = "pw_label";
             this.pw_label.Size = new System.Drawing.Size(67, 13);
             this.pw_label.TabIndex = 2;
@@ -190,7 +201,7 @@
             // Email_label
             // 
             this.Email_label.AutoSize = true;
-            this.Email_label.Location = new System.Drawing.Point(32, 37);
+            this.Email_label.Location = new System.Drawing.Point(30, 51);
             this.Email_label.Name = "Email_label";
             this.Email_label.Size = new System.Drawing.Size(41, 13);
             this.Email_label.TabIndex = 1;
@@ -198,7 +209,7 @@
             // 
             // Btn_Signout
             // 
-            this.Btn_Signout.Location = new System.Drawing.Point(234, 21);
+            this.Btn_Signout.Location = new System.Drawing.Point(232, 35);
             this.Btn_Signout.Name = "Btn_Signout";
             this.Btn_Signout.Size = new System.Drawing.Size(56, 75);
             this.Btn_Signout.TabIndex = 0;
@@ -210,9 +221,9 @@
             // 
             this.Btn_InvalidateS.Location = new System.Drawing.Point(698, 61);
             this.Btn_InvalidateS.Name = "Btn_InvalidateS";
-            this.Btn_InvalidateS.Size = new System.Drawing.Size(64, 43);
+            this.Btn_InvalidateS.Size = new System.Drawing.Size(90, 58);
             this.Btn_InvalidateS.TabIndex = 9;
-            this.Btn_InvalidateS.Text = "Invalidar Sesión";
+            this.Btn_InvalidateS.Text = "Invalidar accessToken actual";
             this.Btn_InvalidateS.UseVisualStyleBackColor = true;
             this.Btn_InvalidateS.Click += new System.EventHandler(this.Btn_InvalidateS_Click);
             // 
@@ -254,5 +265,6 @@
         private System.Windows.Forms.Button Btn_Signout;
         private System.Windows.Forms.Button Btn_InvalidateS;
         private System.Windows.Forms.Button Btn_DeleteS;
+        private System.Windows.Forms.Label label5;
     }
 }
