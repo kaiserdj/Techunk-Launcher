@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -241,7 +241,6 @@ namespace Techunk_Api.Launcher
                     JObject job = JObject.Parse(response);
 
                     result.AccessToken = job["accessToken"].ToString();
-                    result.AccessToken = job["accessToken"].ToString();
                     result.UUID = job["selectedProfile"]["id"].ToString();
                     result.Username = job["selectedProfile"]["name"].ToString();
                     result.ClientToken = session.ClientToken;
@@ -308,8 +307,6 @@ namespace Techunk_Api.Launcher
         public bool Invalidate()
         {
             var session = GetLocalToken();
-
-
 
             var job = new JObject
             {
