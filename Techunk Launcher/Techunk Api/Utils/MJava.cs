@@ -11,7 +11,7 @@ namespace Techunk_Api.Utils
 {
     public class MJava
     {
-        public static string DefaultRuntimeDirectory = Techunk_Api.Launcher.Minecraft.DefaultPath + "\\runtime";
+        public static string DefaultRuntimeDirectory = Launcher.Minecraft.DefaultPath + "\\runtime";
 
         public event ProgressChangedEventHandler DownloadProgressChanged;
         public event EventHandler DownloadCompleted;
@@ -105,14 +105,14 @@ namespace Techunk_Api.Utils
                 Directory.CreateDirectory(RuntimeDirectory);
             }
 
-            var downloader = new Techunk_Api.Launcher.WebDownload();
+            var downloader = new Launcher.WebDownload();
             downloader.DownloadProgressChangedEvent += Downloader_DownloadProgressChangedEvent;
             downloader.DownloadFile(javaUrl, WorkingPath + "\\javatemp.lzma");
 
             DownloadComplete();
         }
 
-        private void Wc_DownloadFileCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        private void Wc_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
             DownloadComplete();
         }
@@ -143,7 +143,7 @@ namespace Techunk_Api.Utils
             UnzipCompleted?.Invoke(this, new EventArgs());
         }
 
-        private void Downloader_DownloadProgressChangedEvent(object sender, System.ComponentModel.ProgressChangedEventArgs e)
+        private void Downloader_DownloadProgressChangedEvent(object sender, ProgressChangedEventArgs e)
         {
             DownloadProgressChanged?.Invoke(this, e);
         }

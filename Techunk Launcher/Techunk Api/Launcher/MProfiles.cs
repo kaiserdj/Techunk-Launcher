@@ -137,7 +137,7 @@ namespace Techunk_Api.Launcher
                     if (item["rules"] != null)
                         allow = ruleChecker.CheckOSRequire((JArray)item["rules"]);
 
-                    var value = item["value"];
+                    var value = item["value"] ?? item["values"];
                     if (allow && value != null)
                     {
                         if (value is JArray)

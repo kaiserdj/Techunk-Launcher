@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Windows.Forms;
 using Techunk_Api.Launcher;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using Techunk_Api;
 
 namespace Techunk_Launcher
 {
@@ -18,6 +18,9 @@ namespace Techunk_Launcher
         private void Main_Load(object sender, EventArgs e)
         {
             // Check java runtime
+            log Llog = new log();
+            Llog.main_log();
+            log.log_.Warn("Prueba");
 
             var java = new Techunk_Api.Utils.MJava(Minecraft.DefaultPath + "\\runtime");
             if (!java.CheckJavaw())
@@ -51,12 +54,13 @@ namespace Techunk_Launcher
         bool allowOffline = true;
         MProfileInfo[] versions;
         MSession session;
+        GameConsole GameConsole;
 
         private void Main_Shown(object sender, EventArgs e)
         {
             // Initialize launcher
 
-            Txt_Path.Text = Techunk_Api.Launcher.Minecraft.CurrentPath + "\\.minecraft";
+            Txt_Path.Text = Minecraft.CurrentPath + "\\.minecraft";
             var th = new Thread(new ThreadStart(delegate
             {
                 Minecraft.Initialize(Txt_Path.Text);
@@ -200,13 +204,19 @@ namespace Techunk_Launcher
                 MLaunch launch = new MLaunch(option); // Start Process
                 var process = launch.GetProcess();
 
-                DebugProcess(process);
-
                 this.Invoke((MethodInvoker)delegate
                 {
+                    if(GameConsole != null)
+                        GameConsole.Close();
+
+                    GameConsole = new GameConsole();
+                    GameConsole.Show();
+
                     groupBox1.Enabled = true;
                     groupBox2.Enabled = true;
                 });
+
+                DebugProcess(process);
             }));
             th.Start();
         }
@@ -259,8 +269,11 @@ namespace Techunk_Launcher
 
         void output(string msg)
         {
-            msg += "\n";
-            Console.WriteLine(msg);
+            Invoke(new Action(() =>
+            {
+                if (GameConsole != null)
+                    GameConsole.AddLog(msg);
+            }));
         }
 
         #endregion
