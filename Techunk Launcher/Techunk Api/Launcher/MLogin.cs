@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Techunk_Api.Launcher
 {
-    public enum MLoginResult { Success, BadRequest, WrongAccount, NeedLogin, UnknownError}
+    public enum MLoginResult { Success, BadRequest, WrongAccount, NeedLogin, UnknownError }
 
     public class MSession
     {
@@ -226,6 +226,21 @@ namespace Techunk_Api.Launcher
             try
             {
                 var session = GetLocalToken();
+                log.log_.Info(session.ClientToken);
+
+                if (session.AccessToken == "")
+                {
+                    result.Result = MLoginResult.NeedLogin;
+
+                    return result;
+                }
+
+                if (session.AccessToken == "Offline")
+                {
+                    result.Result = MLoginResult.Success;
+
+                    return result;
+                }
 
                 var req = new JObject
                 {
@@ -264,8 +279,9 @@ namespace Techunk_Api.Launcher
             {
                 var session = GetLocalToken();
 
-                if(session.AccessToken == "Offline")
+                if (session.AccessToken == "Offline")
                 {
+                    log.log_.Info(session.Result);
                     return session;
                 }
 
