@@ -52,13 +52,23 @@
             this.Txt_ScHt = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.Txt_ScWd = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.Txt_LauncherName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.Txt_ServerIp = new System.Windows.Forms.TextBox();
             this.Lv_Status = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.Txt_VersionType = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.Txt_GLauncherName = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Txt_GLauncherVersion = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Txt_DockName = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Txt_DockIcon = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.Txt_ServerPort = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +220,18 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.Txt_ServerPort);
+            this.groupBox2.Controls.Add(this.Txt_DockIcon);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.Txt_DockName);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.Txt_GLauncherVersion);
+            this.groupBox2.Controls.Add(this.label14);
+            this.groupBox2.Controls.Add(this.Txt_GLauncherName);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.Txt_VersionType);
+            this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.Txt_Ram);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label6);
@@ -218,20 +240,18 @@
             this.groupBox2.Controls.Add(this.Txt_ScHt);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.Txt_ScWd);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.Txt_LauncherName);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.Txt_ServerIp);
-            this.groupBox2.Location = new System.Drawing.Point(386, 12);
+            this.groupBox2.Location = new System.Drawing.Point(371, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(326, 224);
+            this.groupBox2.Size = new System.Drawing.Size(341, 368);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ajustes";
             // 
             // Txt_Ram
             // 
-            this.Txt_Ram.Location = new System.Drawing.Point(103, 134);
+            this.Txt_Ram.Location = new System.Drawing.Point(135, 132);
             this.Txt_Ram.Name = "Txt_Ram";
             this.Txt_Ram.Size = new System.Drawing.Size(200, 20);
             this.Txt_Ram.TabIndex = 11;
@@ -240,7 +260,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(44, 138);
+            this.label11.Location = new System.Drawing.Point(76, 136);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 13);
             this.label11.TabIndex = 10;
@@ -249,7 +269,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 173);
+            this.label6.Location = new System.Drawing.Point(63, 171);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(66, 26);
             this.label6.TabIndex = 9;
@@ -257,7 +277,7 @@
             // 
             // Txt_JavaArgs
             // 
-            this.Txt_JavaArgs.Location = new System.Drawing.Point(103, 160);
+            this.Txt_JavaArgs.Location = new System.Drawing.Point(135, 158);
             this.Txt_JavaArgs.Multiline = true;
             this.Txt_JavaArgs.Name = "Txt_JavaArgs";
             this.Txt_JavaArgs.Size = new System.Drawing.Size(200, 49);
@@ -266,7 +286,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(27, 111);
+            this.label7.Location = new System.Drawing.Point(59, 109);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 7;
@@ -274,7 +294,7 @@
             // 
             // Txt_ScHt
             // 
-            this.Txt_ScHt.Location = new System.Drawing.Point(103, 108);
+            this.Txt_ScHt.Location = new System.Drawing.Point(135, 106);
             this.Txt_ScHt.Name = "Txt_ScHt";
             this.Txt_ScHt.Size = new System.Drawing.Size(200, 20);
             this.Txt_ScHt.TabIndex = 6;
@@ -282,7 +302,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 85);
+            this.label8.Location = new System.Drawing.Point(46, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(83, 13);
             this.label8.TabIndex = 5;
@@ -290,39 +310,23 @@
             // 
             // Txt_ScWd
             // 
-            this.Txt_ScWd.Location = new System.Drawing.Point(103, 82);
+            this.Txt_ScWd.Location = new System.Drawing.Point(135, 80);
             this.Txt_ScWd.Name = "Txt_ScWd";
             this.Txt_ScWd.Size = new System.Drawing.Size(200, 20);
             this.Txt_ScWd.TabIndex = 4;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(11, 33);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 13);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Launcher Name:";
-            // 
-            // Txt_LauncherName
-            // 
-            this.Txt_LauncherName.Location = new System.Drawing.Point(103, 30);
-            this.Txt_LauncherName.Name = "Txt_LauncherName";
-            this.Txt_LauncherName.Size = new System.Drawing.Size(200, 20);
-            this.Txt_LauncherName.TabIndex = 2;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(43, 59);
+            this.label10.Location = new System.Drawing.Point(60, 31);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(54, 13);
+            this.label10.Size = new System.Drawing.Size(69, 13);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Server IP:";
+            this.label10.Text = "IP del server:";
             // 
             // Txt_ServerIp
             // 
-            this.Txt_ServerIp.Location = new System.Drawing.Point(103, 56);
+            this.Txt_ServerIp.Location = new System.Drawing.Point(135, 28);
             this.Txt_ServerIp.Name = "Txt_ServerIp";
             this.Txt_ServerIp.Size = new System.Drawing.Size(200, 20);
             this.Txt_ServerIp.TabIndex = 0;
@@ -330,7 +334,7 @@
             // Lv_Status
             // 
             this.Lv_Status.AutoSize = true;
-            this.Lv_Status.Location = new System.Drawing.Point(41, 223);
+            this.Lv_Status.Location = new System.Drawing.Point(38, 388);
             this.Lv_Status.Name = "Lv_Status";
             this.Lv_Status.Size = new System.Drawing.Size(56, 13);
             this.Lv_Status.TabIndex = 12;
@@ -338,23 +342,119 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 250);
+            this.progressBar1.Location = new System.Drawing.Point(9, 415);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(700, 23);
             this.progressBar1.TabIndex = 13;
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(12, 279);
+            this.progressBar2.Location = new System.Drawing.Point(9, 444);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(700, 23);
             this.progressBar2.TabIndex = 14;
+            // 
+            // Txt_VersionType
+            // 
+            this.Txt_VersionType.Location = new System.Drawing.Point(135, 213);
+            this.Txt_VersionType.Name = "Txt_VersionType";
+            this.Txt_VersionType.Size = new System.Drawing.Size(200, 20);
+            this.Txt_VersionType.TabIndex = 13;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(46, 216);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Tipo de verisón:";
+            // 
+            // Txt_GLauncherName
+            // 
+            this.Txt_GLauncherName.Location = new System.Drawing.Point(135, 239);
+            this.Txt_GLauncherName.Name = "Txt_GLauncherName";
+            this.Txt_GLauncherName.Size = new System.Drawing.Size(200, 20);
+            this.Txt_GLauncherName.TabIndex = 15;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(29, 242);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 13);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "Nombre GLauncher:";
+            // 
+            // Txt_GLauncherVersion
+            // 
+            this.Txt_GLauncherVersion.Location = new System.Drawing.Point(135, 265);
+            this.Txt_GLauncherVersion.Name = "Txt_GLauncherVersion";
+            this.Txt_GLauncherVersion.Size = new System.Drawing.Size(200, 20);
+            this.Txt_GLauncherVersion.TabIndex = 17;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(28, 268);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(101, 13);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Versión GLauncher:";
+            // 
+            // Txt_DockName
+            // 
+            this.Txt_DockName.Location = new System.Drawing.Point(135, 291);
+            this.Txt_DockName.Name = "Txt_DockName";
+            this.Txt_DockName.Size = new System.Drawing.Size(200, 20);
+            this.Txt_DockName.TabIndex = 19;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 294);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 13);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "Nombre de Dock:";
+            // 
+            // Txt_DockIcon
+            // 
+            this.Txt_DockIcon.Location = new System.Drawing.Point(135, 317);
+            this.Txt_DockIcon.Name = "Txt_DockIcon";
+            this.Txt_DockIcon.Size = new System.Drawing.Size(200, 20);
+            this.Txt_DockIcon.TabIndex = 21;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(46, 320);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(83, 13);
+            this.label16.TabIndex = 20;
+            this.label16.Text = "Icono del Dock:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(37, 59);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(92, 13);
+            this.label9.TabIndex = 23;
+            this.label9.Text = "Puesto del server:";
+            // 
+            // Txt_ServerPort
+            // 
+            this.Txt_ServerPort.Location = new System.Drawing.Point(135, 54);
+            this.Txt_ServerPort.Name = "Txt_ServerPort";
+            this.Txt_ServerPort.Size = new System.Drawing.Size(200, 20);
+            this.Txt_ServerPort.TabIndex = 22;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(733, 327);
+            this.ClientSize = new System.Drawing.Size(733, 481);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.Lv_Status);
@@ -397,13 +497,23 @@
         private System.Windows.Forms.TextBox Txt_ScHt;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Txt_ScWd;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox Txt_LauncherName;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox Txt_ServerIp;
         private System.Windows.Forms.Label Lv_Status;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.ProgressBar progressBar2;
         private System.Windows.Forms.Button Btn_loginOption;
+        private System.Windows.Forms.TextBox Txt_DockIcon;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox Txt_DockName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox Txt_GLauncherVersion;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Txt_GLauncherName;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox Txt_VersionType;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox Txt_ServerPort;
     }
 }
